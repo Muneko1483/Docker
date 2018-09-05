@@ -1,12 +1,13 @@
-version: "2"
+version : '3.3'
 services:
-  web:
-    build: .
-    ports:
-    - "3000:3000"
-    depends_on:
-    - mongo
-  mongo:
+  mongo-database:
     image: mongo
     ports:
-    - "27017:27017"
+      - "27017:27017"
+
+  todo-node-server:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - mongo-database 

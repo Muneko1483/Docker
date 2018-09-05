@@ -6,7 +6,7 @@ var express = require('express'),
   bodyParser = require('body-parser');
   
 // mongoose instance connection url connection
-mongoose.connect('mongodb://mongodb/Tododb',{ useNewUrlParser: true }); 
+mongoose.connect('mongodb://mongo-database:27017/tododb',{ useNewUrlParser: true }); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
